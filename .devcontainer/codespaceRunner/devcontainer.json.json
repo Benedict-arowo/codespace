@@ -1,0 +1,31 @@
+{
+    "name": "CodespaceRunner",
+    "dockerFile": "Dockerfile",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.azurecli",
+                "ms-vscode.powershell",
+                "hashicorp.terraform",
+                "esbenp.prettier-vscode",
+                "tfsec.tfsec"
+            ]
+        }
+    },
+    "forwardPorts": [],
+    "postStartCommand": "/home/vscode/actions-runner/start.sh",
+    "remoteUser": "vscode",
+    "build": {
+        "args": {
+            "UPGRADE_PACKAGES": "true",
+            "RUNNER_VERSION": "2.295.0"
+        }
+    },
+    "features": {
+        "terraform": "latest",
+        "azure-cli": "latest",
+        "git-lfs": "latest",
+        "github-cli": "latest",
+        "powershell": "latest"
+    }
+}
